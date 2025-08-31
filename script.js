@@ -6,19 +6,25 @@ document.getElementById("add-btn").addEventListener("click", function () {
     alert("Enter any task.");
     return;
   }
-  
-  if(!taskArray.includes(p.value)){
-    taskArray.push(p.value);
-    let newTask = document.createElement("li");
-    let newbtn = document.createElement("button");
-    newbtn.textContent = "Delete";
-    
-    newTask.textContent = `Task ${c++}: ${p.value} `;
-    document.getElementById("todolist").appendChild(newTask);
-    document.getElementById("todolist").lastChild.appendChild(newbtn);
 
+  if (!taskArray.includes(p.value)) {
+    
+    let newTask = document.createElement("li");
+    const btnId = `delete-btn-${Date.now()}`; // Create unique ID
+    newTask.innerHTML = `Task: ${p.value} 
+    <button class="newBtn" id="${btnId}">Delete</button             
+    `;
+    document.getElementById("todolist").appendChild(newTask);
+    
     p.value = "";
-  }
-  else alert('Task already on the list!!!')
+
+    // Add event listener to the new delete button
+    document.getElementById(btnId).addEventListener("click", function () {
+      let d = document.getElementById("todolist").lastElementChild;
+      alert('You are removing a task.')
+      d.remove();
+      
+    });
   
+  } else alert("Task already on the list!!!");
 });
