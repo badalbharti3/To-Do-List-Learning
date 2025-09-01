@@ -1,4 +1,3 @@
-let c = 1;
 let taskArray = [];
 document.getElementById("add-btn").addEventListener("click", function () {
   let p = document.getElementById("todo-input");
@@ -10,7 +9,7 @@ document.getElementById("add-btn").addEventListener("click", function () {
   if (!taskArray.includes(p.value)) {
     
     let newTask = document.createElement("li");
-    const btnId = `delete-btn-${Date.now()}`; // Create unique ID
+    const btnId = `delete-btn-${Date.now()}`; 
     newTask.innerHTML = `Task: ${p.value} 
     <button class="newBtn" id="${btnId}">Delete</button             
     `;
