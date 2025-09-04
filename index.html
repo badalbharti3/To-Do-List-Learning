@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> To-Do List</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="./manifest.json">
 </head>
 <body style="background-color: #3d3d3d;">
     <div class="container">
@@ -16,5 +17,10 @@
         <ul id="todo-list"></ul>
     </div>
     <script src="script.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js');
+  }
+</script>
 </body>
 </html>
