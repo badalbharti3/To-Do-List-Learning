@@ -1,9 +1,0 @@
-{
-  "appId": "com.dev.todolist",
-  "appName": "To-Do List",
-  "webDir": ".",
-  "server": {
-    "url": "https://freetodolist.netlify.app/",
-    "cleartext": true
-  }
-}
